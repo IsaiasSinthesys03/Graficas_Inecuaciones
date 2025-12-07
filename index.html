@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solucionario Detallado: Inecuaciones Lineales</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        .canvas-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px 0;
+        }
+
+        canvas {
+            border: 1px solid #cbd5e1;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        .step-box {
+            background-color: #f8fafc;
+            border-left: 4px solid #3b82f6;
+            /* Azul estándar */
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 0 0.5rem 0.5rem 0;
+        }
+
+        .warning-box {
+            background-color: #fff7ed;
+            border-left: 4px solid #f97316;
+            /* Naranja alerta */
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 0 0.5rem 0.5rem 0;
+        }
+
+        .math-step {
+            margin-bottom: 0.5rem;
+            padding-left: 1rem;
+            border-left: 2px solid #e2e8f0;
+        }
+
+        .highlight {
+            font-weight: bold;
+            color: #15803d;
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50 text-slate-800 font-sans leading-relaxed">
+
+    <div class="max-w-4xl mx-auto p-8">
+        <header class="mb-12 text-center border-b pb-8 border-slate-200">
+            <h1 class="text-4xl font-bold text-slate-900 mb-4">Solucionario Detallado: Inecuaciones</h1>
+            <p class="text-lg text-slate-600">Resolución algebraica paso a paso y análisis de intervalos.</p>
+            <div class="mt-4 flex justify-center gap-6 text-sm font-semibold">
+                <span class="flex items-center"><span
+                        class="w-3 h-3 rounded-full border-2 border-blue-600 bg-white mr-2"></span>Abierto (
+                    < />)
+                </span>
+                <span class="flex items-center"><span class="w-3 h-3 rounded-full bg-blue-600 mr-2"></span>Cerrado (≤ /
+                    ≥)</span>
+            </div>
+        </header>
+
+        <!-- Ejercicio 1 -->
+        <article class="mb-12 bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+            <h2 class="text-xl font-bold text-blue-700 mb-4">1. \(x + 3 > 7\)</h2>
+            <div class="step-box">
+                <h3 class="font-bold text-slate-900 mb-2">Procedimiento Algebraico:</h3>
+                <div class="math-step">
+                    <p>Queremos dejar la \(x\) sola. El 3 está sumando, así que restamos 3 a ambos lados:</p>
+                    $$x > 7 - 3$$
+                </div>
+                <div class="math-step">
+                    <p>Realizamos la resta:</p>
+                    $$x > 4$$
+                </div>
+                <p class="mt-2"><strong>Interpretación:</strong> Todos los números estrictamente mayores que 4.</p>
+                <p><strong>Intervalo:</strong> \((4, \infty)\)</p>
+            </div>
+            <div class="canvas-wrapper">
+                <canvas id="canvas1" width="500" height="150"></canvas>
+            </div>
+        </article>
+
+        <!-- Ejercicio 2 -->
+        <article class="mb-12 bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+            <h2 class="text-xl font-bold text-blue-700 mb-4">2. \(2x - 1 \le 5\)</h2>
+            <div class="step-box">
+                <h3 class="font-bold text-slate-900 mb-2">Procedimiento Algebraico:</h3>
+                <div class="math-step">
+                    <p>1. Pasamos el -1 al otro lado sumando (operación inversa):</p>
+                    $$2x \le 5 + 1 \Rightarrow 2x \le 6$$
+                </div>
+                <div class="math-step">
+                    <p>2. El 2 está multiplicando a la \(x\), así que pasamos dividiendo (como es positivo, el signo
+                        \(\le\) se mantiene):</p>
+                    $$x \le \frac{6}{2}$$
+                </div>
+                <div class="math-step">
+                    <p>3. Simplificamos:</p>
+                    $$x \le 3$$
+                </div>
+                <p><strong>Intervalo:</strong> \((-\infty, 3]\)</p>
+            </div>
+            <div class="canvas-wrapper">
+                <canvas id="canvas2" width="500" height="150"></canvas>
+            </div>
+        </article>
+
+        <!-- Ejercicio 3 -->
+        <article class="mb-12 bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+            <h2 class="text-xl font-bold text-blue-700 mb-4">3. \(4x + 2 < 10\)</h2>
+                    <div class="step-box">
+                        <h3 class="font-bold text-slate-900 mb-2">Procedimiento Algebraico:</h3>
+                        <div class="math-step">
+                            <p>1. Restamos 2 a ambos lados para eliminar el término independiente:</p>
+                            $$4x < 10 - 2 \Rightarrow 4x < 8$$ </div>
+                                <div class="math-step">
+                                    <p>2. Dividimos entre 4 para despejar \(x\):</p>
+                                    $$x < \frac{8}{4}$$ </div>
+                                        <div class="math-step">
+                                            <p>3. Resultado final:</p>
+                                            $$x < 2$$ </div>
+                                                <p><strong>Intervalo:</strong> \((-\infty, 2)\)</p>
+                                        </div>
+                                        <div class="canvas-wrapper">
+                                            <canvas id="canvas3" width="500" height="150"></canvas>
+                                        </div>
+        </article>
+
+        <!-- Ejercicio 4 -->
+        <article class="mb-12 bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+            <h2 class="text-xl font-bold text-blue-700 mb-4">4. \(5 - x \ge 2\)</h2>
+            <div class="step-box">
+                <h3 class="font-bold text-slate-900 mb-2">Procedimiento Algebraico:</h3>
+                <div class="math-step">
+                    <p>1. El 5 es positivo, pasa restando al otro lado:</p>
+                    $$-x \ge 2 - 5 \Rightarrow -x \ge -3$$
+                </div>
+                <div class="warning-box">
+                    <p><strong>¡Atención! Regla de Oro:</strong></p>
+                    <p>Tenemos \(-x\). Para volverla positiva, multiplicamos o dividimos por -1. Al hacer esto con un
+                        número negativo, <strong>invertimos el sentido de la desigualdad</strong>.</p>
+                    $$x \le \frac{-3}{-1}$$
+                </div>
+                <div class="math-step">
+                    <p>2. Resultado (menos entre menos da más):</p>
+                    $$x \le 3$$
+                </div>
+                <p><strong>Intervalo:</strong> \((-\infty, 3]\)</p>
+            </div>
+            <div class="canvas-wrapper">
+                <canvas id="canvas4" width="500" height="150"></canvas>
+            </div>
+        </article>
+
+        <!-- Ejercicio 5 -->
+        <article class="mb-12 bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+            <h2 class="text-xl font-bold text-blue-700 mb-4">5. \(3(x - 2) > 9\)</h2>
+            <div class="step-box">
+                <h3 class="font-bold text-slate-900 mb-2">Procedimiento Algebraico:</h3>
+                <div class="math-step">
+                    <p>Opción A (Expandir): \(3x - 6 > 9\).<br>
+                        Opción B (Dividir primero): Como 3 multiplica a todo el paréntesis, lo pasamos dividiendo:</p>
+                    $$x - 2 > \frac{9}{3} \Rightarrow x - 2 > 3$$
+                </div>
+                <div class="math-step">
+                    <p>Ahora pasamos el -2 sumando:</p>
+                    $$x > 3 + 2$$
+                </div>
+                <div class="math-step">
+                    <p>Resultado:</p>
+                    $$x > 5$$
+                </div>
+                <p><strong>Intervalo:</strong> \((5, \infty)\)</p>
+            </div>
+            <div class="canvas-wrapper">
+                <canvas id="canvas5" width="500" height="150"></canvas>
+            </div>
+        </article>
+
+        <!-- Ejercicio 6 -->
+        <article class="mb-12 bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+            <h2 class="text-xl font-bold text-blue-700 mb-4">6. \(2x + 4 \le 5x - 2\)</h2>
+            <div class="step-box">
+                <h3 class="font-bold text-slate-900 mb-2">Procedimiento Algebraico:</h3>
+                <div class="math-step">
+                    <p>1. Agrupamos términos semejantes. Recomendación: Mover las \(x\) hacia donde queden positivas
+                        para evitar errores de signo.</p>
+                    <p>Pasamos \(2x\) a la derecha y \(-2\) a la izquierda:</p>
+                    $$4 + 2 \le 5x - 2x$$
+                </div>
+                <div class="math-step">
+                    <p>2. Simplificamos ambos lados:</p>
+                    $$6 \le 3x$$
+                </div>
+                <div class="math-step">
+                    <p>3. Dividimos por 3:</p>
+                    $$\frac{6}{3} \le x \Rightarrow 2 \le x$$
+                </div>
+                <div class="math-step">
+                    <p>4. Reescribimos para leer mejor (si 2 es menor que x, entonces x es mayor que 2):</p>
+                    $$x \ge 2$$
+                </div>
+                <p><strong>Intervalo:</strong> \([2, \infty)\)</p>
+            </div>
+            <div class="canvas-wrapper">
+                <canvas id="canvas6" width="500" height="150"></canvas>
+            </div>
+        </article>
+
+        <!-- Ejercicio 7 -->
+        <article class="mb-12 bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+            <h2 class="text-xl font-bold text-blue-700 mb-4">7. \(2x + 1 < 3\)</h2>
+                    <div class="step-box">
+                        <h3 class="font-bold text-slate-900 mb-2">Procedimiento Algebraico:</h3>
+                        <div class="math-step">
+                            <p>1. Despejamos el término con \(x\) restando 1:</p>
+                            $$2x < 3 - 1 \Rightarrow 2x < 2$$ </div>
+                                <div class="math-step">
+                                    <p>2. Dividimos por 2:</p>
+                                    $$x < \frac{2}{2}$$ </div>
+                                        <div class="math-step">
+                                            <p>3. Resultado:</p>
+                                            $$x < 1$$ </div>
+                                                <p><strong>Intervalo:</strong> \((-\infty, 1)\)</p>
+                                        </div>
+                                        <div class="canvas-wrapper">
+                                            <canvas id="canvas7" width="500" height="150"></canvas>
+                                        </div>
+        </article>
+
+        <!-- Ejercicio 8 -->
+        <article class="mb-12 bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+            <h2 class="text-xl font-bold text-blue-700 mb-4">8. \(7 - 3x < 1\)</h2>
+                    <div class="step-box">
+                        <h3 class="font-bold text-slate-900 mb-2">Procedimiento Algebraico:</h3>
+                        <div class="math-step">
+                            <p>1. Pasamos el 7 restando:</p>
+                            $$-3x < 1 - 7 \Rightarrow -3x < -6$$ </div>
+                                <div class="warning-box">
+                                    <p><strong>¡Cambio de Signo!</strong></p>
+                                    <p>Vamos a dividir entre -3. Al ser negativo, el símbolo \(<\) se voltea a \(>\).
+                                    </p>
+                                    $$x > \frac{-6}{-3}$$
+                                </div>
+                                <div class="math-step">
+                                    <p>2. Simplificamos (menos entre menos es más):</p>
+                                    $$x > 2$$
+                                </div>
+                                <p><strong>Intervalo:</strong> \((2, \infty)\)</p>
+                        </div>
+                        <div class="canvas-wrapper">
+                            <canvas id="canvas8" width="500" height="150"></canvas>
+                        </div>
+        </article>
+
+        <!-- Ejercicio 9 -->
+        <article class="mb-12 bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+            <h2 class="text-xl font-bold text-blue-700 mb-4">9. \(-4x + 8 \ge 2x - 4\)</h2>
+            <div class="step-box">
+                <h3 class="font-bold text-slate-900 mb-2">Procedimiento Algebraico:</h3>
+                <div class="math-step">
+                    <p>1. Agrupamos términos. Llevamos las \(x\) a la derecha para que queden positivas (\(2x + 4x\)) y
+                        los números a la izquierda (\(8 + 4\)):</p>
+                    $$8 + 4 \ge 2x + 4x$$
+                </div>
+                <div class="math-step">
+                    <p>2. Operamos:</p>
+                    $$12 \ge 6x$$
+                </div>
+                <div class="math-step">
+                    <p>3. Dividimos por 6:</p>
+                    $$2 \ge x$$
+                </div>
+                <div class="math-step">
+                    <p>4. Reescribimos:</p>
+                    $$x \le 2$$
+                </div>
+                <p><strong>Intervalo:</strong> \((-\infty, 2]\)</p>
+            </div>
+            <div class="canvas-wrapper">
+                <canvas id="canvas9" width="500" height="150"></canvas>
+            </div>
+        </article>
+
+        <!-- Ejercicio 10 -->
+        <article class="mb-12 bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+            <h2 class="text-xl font-bold text-blue-700 mb-4">10. \(2(x + 5) \ge 12\)</h2>
+            <div class="step-box">
+                <h3 class="font-bold text-slate-900 mb-2">Procedimiento Algebraico:</h3>
+                <div class="math-step">
+                    <p>1. El 2 multiplica a todo el paréntesis. Lo pasamos dividiendo al 12:</p>
+                    $$x + 5 \ge \frac{12}{2} \Rightarrow x + 5 \ge 6$$
+                </div>
+                <div class="math-step">
+                    <p>2. Pasamos el 5 restando:</p>
+                    $$x \ge 6 - 5$$
+                </div>
+                <div class="math-step">
+                    <p>3. Resultado:</p>
+                    $$x \ge 1$$
+                </div>
+                <p><strong>Intervalo:</strong> \([1, \infty)\)</p>
+            </div>
+            <div class="canvas-wrapper">
+                <canvas id="canvas10" width="500" height="150"></canvas>
+            </div>
+        </article>
+
+        <!-- Ejercicio 11 -->
+        <article class="mb-12 bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+            <h2 class="text-xl font-bold text-blue-700 mb-4">11. \(x - 5 > 2x + 1\)</h2>
+            <div class="step-box">
+                <h3 class="font-bold text-slate-900 mb-2">Procedimiento Algebraico:</h3>
+                <div class="math-step">
+                    <p>1. Agrupamos \(x\) donde quede positiva. Pasamos la \(x\) de la izquierda a restar a la derecha
+                        (\(2x - x\)):</p>
+                    $$-5 - 1 > 2x - x$$
+                </div>
+                <div class="math-step">
+                    <p>2. Resolvemos las operaciones:</p>
+                    $$-6 > x$$
+                </div>
+                <div class="math-step">
+                    <p>3. Leemos al revés para la solución estándar:</p>
+                    $$x < -6$$ </div>
+                        <p><strong>Intervalo:</strong> \((-\infty, -6)\)</p>
+                </div>
+                <div class="canvas-wrapper">
+                    <canvas id="canvas11" width="500" height="150"></canvas>
+                </div>
+        </article>
+
+        <!-- Ejercicio 12 -->
+        <article class="mb-12 bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+            <h2 class="text-xl font-bold text-blue-700 mb-4">12. \(3x - 2 \le 4\)</h2>
+            <div class="step-box">
+                <h3 class="font-bold text-slate-900 mb-2">Procedimiento Algebraico:</h3>
+                <div class="math-step">
+                    <p>1. Pasamos el -2 sumando:</p>
+                    $$3x \le 4 + 2 \Rightarrow 3x \le 6$$
+                </div>
+                <div class="math-step">
+                    <p>2. Dividimos entre 3:</p>
+                    $$x \le \frac{6}{3}$$
+                </div>
+                <div class="math-step">
+                    <p>3. Resultado:</p>
+                    $$x \le 2$$
+                </div>
+                <p><strong>Intervalo:</strong> \((-\infty, 2]\)</p>
+            </div>
+            <div class="canvas-wrapper">
+                <canvas id="canvas12" width="500" height="150"></canvas>
+            </div>
+        </article>
+
+        <!-- Ejercicio 13 -->
+        <article class="mb-12 bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+            <h2 class="text-xl font-bold text-blue-700 mb-4">13. \(6x + 3 < 3x + 15\)</h2>
+                    <div class="step-box">
+                        <h3 class="font-bold text-slate-900 mb-2">Procedimiento Algebraico:</h3>
+                        <div class="math-step">
+                            <p>1. Pasamos las \(x\) a la izquierda (\(6x - 3x\)) y los números a la derecha (\(15 -
+                                3\)):</p>
+                            $$3x < 12$$ </div>
+                                <div class="math-step">
+                                    <p>2. Dividimos por 3:</p>
+                                    $$x < \frac{12}{3}$$ </div>
+                                        <div class="math-step">
+                                            <p>3. Resultado:</p>
+                                            $$x < 4$$ </div>
+                                                <p><strong>Intervalo:</strong> \((-\infty, 4)\)</p>
+                                        </div>
+                                        <div class="canvas-wrapper">
+                                            <canvas id="canvas13" width="500" height="150"></canvas>
+                                        </div>
+        </article>
+
+        <!-- Ejercicio 14 -->
+        <article class="mb-12 bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+            <h2 class="text-xl font-bold text-blue-700 mb-4">14. \(10 - 2x \le 4\)</h2>
+            <div class="step-box">
+                <h3 class="font-bold text-slate-900 mb-2">Procedimiento Algebraico:</h3>
+                <div class="math-step">
+                    <p>1. Restamos 10 a ambos lados:</p>
+                    $$-2x \le 4 - 10 \Rightarrow -2x \le -6$$
+                </div>
+                <div class="warning-box">
+                    <p><strong>¡Atención!</strong></p>
+                    <p>Dividimos entre -2. Invertimos el signo de \(\le\) a \(\ge\).</p>
+                    $$x \ge \frac{-6}{-2}$$
+                </div>
+                <div class="math-step">
+                    <p>2. Resultado:</p>
+                    $$x \ge 3$$
+                </div>
+                <p><strong>Intervalo:</strong> \([3, \infty)\)</p>
+            </div>
+            <div class="canvas-wrapper">
+                <canvas id="canvas14" width="500" height="150"></canvas>
+            </div>
+        </article>
+
+        <!-- Ejercicio 15 -->
+        <article class="mb-12 bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+            <h2 class="text-xl font-bold text-blue-700 mb-4">15. \(x + 2(x + 1) > 8\)</h2>
+            <div class="step-box">
+                <h3 class="font-bold text-slate-900 mb-2">Procedimiento Algebraico:</h3>
+                <div class="math-step">
+                    <p>1. Eliminamos el paréntesis distribuyendo el 2:</p>
+                    $$x + 2x + 2 > 8$$
+                </div>
+                <div class="math-step">
+                    <p>2. Sumamos términos semejantes (\(x + 2x = 3x\)) y pasamos el 2 restando:</p>
+                    $$3x > 8 - 2 \Rightarrow 3x > 6$$
+                </div>
+                <div class="math-step">
+                    <p>3. Dividimos por 3:</p>
+                    $$x > 2$$
+                </div>
+                <p><strong>Intervalo:</strong> \((2, \infty)\)</p>
+            </div>
+            <div class="canvas-wrapper">
+                <canvas id="canvas15" width="500" height="150"></canvas>
+            </div>
+        </article>
+
+        <!-- Ejercicio 16 -->
+        <article class="mb-12 bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+            <h2 class="text-xl font-bold text-blue-700 mb-4">16. \(3x - 4 \ge 2x + 1\)</h2>
+            <div class="step-box">
+                <h3 class="font-bold text-slate-900 mb-2">Procedimiento Algebraico:</h3>
+                <div class="math-step">
+                    <p>1. Agrupamos las \(x\) a la izquierda (\(3x - 2x\)) y los números a la derecha (\(1 + 4\)):</p>
+                    $$x \ge 5$$
+                </div>
+                <p><strong>Intervalo:</strong> \([5, \infty)\)</p>
+            </div>
+            <div class="canvas-wrapper">
+                <canvas id="canvas16" width="500" height="150"></canvas>
+            </div>
+        </article>
+
+    </div>
+
+    <script>
+        const CANVAS_WIDTH = 500;
+        const CANVAS_HEIGHT = 150;
+        const LINE_Y = 75; // Altura de la recta principal
+        const SCALE = 30; // Píxeles por unidad
+
+        function drawNumberLine(canvasId, value, direction, isOpen) {
+            const canvas = document.getElementById(canvasId);
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+
+            // Limpiar
+            ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+
+            // Centro dinámico: Ponemos el "valor" en el centro del canvas
+            const centerX = CANVAS_WIDTH / 2;
+
+            // Función para convertir valor numérico a posición X en canvas
+            const toX = (val) => centerX + (val - value) * SCALE;
+
+            // 1. DIBUJAR LÍNEA BASE INFINITA
+            ctx.beginPath();
+            ctx.strokeStyle = '#94a3b8';
+            ctx.lineWidth = 2;
+            ctx.moveTo(0, LINE_Y);
+            ctx.lineTo(CANVAS_WIDTH, LINE_Y);
+            ctx.stroke();
+
+            // 2. DIBUJAR MARCAS Y NÚMEROS (Rango de -7 a +7 alrededor del valor)
+            ctx.fillStyle = '#64748b';
+            ctx.font = '12px Arial';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'top';
+
+            for (let i = -8; i <= 8; i++) {
+                const num = value + i;
+                const xPos = toX(num);
+
+                // Dibujar solo si está dentro del canvas
+                if (xPos >= 0 && xPos <= CANVAS_WIDTH) {
+                    ctx.beginPath();
+                    ctx.moveTo(xPos, LINE_Y - 5);
+                    ctx.lineTo(xPos, LINE_Y + 5);
+                    ctx.stroke();
+                    ctx.fillText(num, xPos, LINE_Y + 10);
+                }
+            }
+
+            // 3. DIBUJAR EL INTERVALO (FLECHA Y COLOR)
+            ctx.beginPath();
+            ctx.strokeStyle = '#2563eb'; // Azul fuerte
+            ctx.lineWidth = 4;
+
+            let startX, endX;
+            if (direction === 'greater') {
+                startX = centerX;
+                endX = CANVAS_WIDTH; // Hacia la derecha infinito
+            } else {
+                startX = 0; // Desde la izquierda infinito
+                endX = centerX;
+            }
+
+            // Línea gruesa del intervalo (ligeramente elevada para que se vea bien)
+            const intervalY = LINE_Y - 0;
+            ctx.moveTo(startX, intervalY);
+            ctx.lineTo(endX, intervalY);
+            ctx.stroke();
+
+            // Punta de flecha
+            ctx.beginPath();
+            ctx.fillStyle = '#2563eb';
+            if (direction === 'greater') {
+                ctx.moveTo(CANVAS_WIDTH - 10, intervalY - 5);
+                ctx.lineTo(CANVAS_WIDTH, intervalY);
+                ctx.lineTo(CANVAS_WIDTH - 10, intervalY + 5);
+            } else {
+                ctx.moveTo(10, intervalY - 5);
+                ctx.lineTo(0, intervalY);
+                ctx.lineTo(10, intervalY + 5);
+            }
+            ctx.fill();
+
+            // 4. CÍRCULO EN EL VALOR CRÍTICO
+            ctx.beginPath();
+            ctx.lineWidth = 3;
+            ctx.strokeStyle = '#2563eb'; // Borde azul
+            // Círculo en el centro (que representa el "value")
+            ctx.arc(centerX, intervalY, 6, 0, 2 * Math.PI);
+
+            if (isOpen) {
+                ctx.fillStyle = '#ffffff'; // Blanco por dentro (abierto)
+            } else {
+                ctx.fillStyle = '#2563eb'; // Azul por dentro (cerrado)
+            }
+
+            ctx.fill();
+            ctx.stroke();
+        }
+
+        window.onload = function () {
+            // drawNumberLine(id, value, direction, isOpen)
+            // direction: 'less' (izquierda) o 'greater' (derecha)
+            // isOpen: true (círculo vacío) o false (círculo lleno)
+
+            // 1. x > 4
+            drawNumberLine('canvas1', 4, 'greater', true);
+            // 2. x <= 3
+            drawNumberLine('canvas2', 3, 'less', false);
+            // 3. x < 2
+            drawNumberLine('canvas3', 2, 'less', true);
+            // 4. x <= 3
+            drawNumberLine('canvas4', 3, 'less', false);
+            // 5. x > 5
+            drawNumberLine('canvas5', 5, 'greater', true);
+            // 6. x >= 2
+            drawNumberLine('canvas6', 2, 'greater', false);
+            // 7. x < 1
+            drawNumberLine('canvas7', 1, 'less', true);
+            // 8. x > 2
+            drawNumberLine('canvas8', 2, 'greater', true);
+            // 9. x <= 2
+            drawNumberLine('canvas9', 2, 'less', false);
+            // 10. x >= 1
+            drawNumberLine('canvas10', 1, 'greater', false);
+            // 11. x < -6
+            drawNumberLine('canvas11', -6, 'less', true);
+            // 12. x <= 2
+            drawNumberLine('canvas12', 2, 'less', false);
+            // 13. x < 4
+            drawNumberLine('canvas13', 4, 'less', true);
+            // 14. x >= 3
+            drawNumberLine('canvas14', 3, 'greater', false);
+            // 15. x > 2
+            drawNumberLine('canvas15', 2, 'greater', true);
+            // 16. x >= 5
+            drawNumberLine('canvas16', 5, 'greater', false);
+        };
+    </script>
+</body>
+
+</html>
